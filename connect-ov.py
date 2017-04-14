@@ -7,10 +7,9 @@ import re
 import logging
 import os
 
-print os.environ['ONEVIEWSDK_IP']
-print os.environ['ONEVIEWSDK_USERNAME']
-print os.environ['ONEVIEWSDK_API_VERSION']
-
+print(os.environ['ONEVIEWSDK_IP'])
+print(os.environ['ONEVIEWSDK_USERNAME'])
+print(os.environ['ONEVIEWSDK_API_VERSION'])
 
 ov_client = OneViewClient.from_environment_variables()
 server_hw = ov_client.server_hardware.get_all()
