@@ -7,16 +7,7 @@ import re
 import logging
 import os
 
-config = {
-    "ip": "10.188.29.5",
-    "api_version": 300,
-    "credentials": {
-        "userName": "Administrator",
-        "password": "P@ssw0rd1"
-    }
-}
-
-ov_client = OneViewClient(config)
+ov_client = OneViewClient.from_environment_variables()
 server_hw = ov_client.server_hardware.get_all()
 # Iterate through each server and validate info in ES
 for server in server_hw:
