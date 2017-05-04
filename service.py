@@ -34,20 +34,6 @@ ov_client = None
 # Keep a track of Server Profile Tasks
 server_profile_tasks=[]
 
-###
-config = {
-    "ip": "10.188.29.5",
-    "api_version": 300,
-    "credentials": {
-        "userName": "Administrator",
-        "password": "P@ssw0rd1"
-    }
-}
-
-os.environ['ONEVIEW_UNIVERSE_SPT'] = 'dcos-server'
-os.environ['ONEVIEW_UNIVERSE_OSDP'] = 'dcos-osdp'
-####
-
 # Service running
 @app.route('/', methods=['GET'])
 def get_alive():
@@ -210,6 +196,6 @@ def post_removenode():
 if __name__ == '__main__':
     # Connect to OneView
     print ("ov2mesos service started")
-    #ov_client = OneViewClient.from_environment_variables()
-    ov_client = OneViewClient(config)
+    ov_client = OneViewClient.from_environment_variables()
+    #ov_client = OneViewClient(config)
     app.run(debug=True)
