@@ -198,4 +198,5 @@ if __name__ == '__main__':
     print ("ov2mesos service started")
     ov_client = OneViewClient.from_environment_variables()
     #ov_client = OneViewClient(config)
-    app.run(debug=True)
+    #app.run(debug=True)
+    app.run()
