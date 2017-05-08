@@ -37,6 +37,7 @@ server_profile_tasks=[]
 # Service running
 @app.route('/', methods=['GET'])
 def get_alive():
+    print ("inside alive")
     return make_response(jsonify({'status': 'Alive', 'message' : 'ov2mesos - Alive and kicking'}))
 
 # Error handler for Flask
